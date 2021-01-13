@@ -1,6 +1,5 @@
 import unittest
 import time
-import pyautogui
 from selenium import webdriver
 from HTMLTestRunnerNew import HTMLTestRunner
 class Denglu(unittest.TestCase):
@@ -140,22 +139,6 @@ class Denglu(unittest.TestCase):
         except Exception as a:
             print("异常为", a)
 
-    @unittest.skip
-    def test_deng9(self):
-        try:
-            self.we.find_element_by_xpath("/html/body/section/aside/div/ul/li[1]/a/span[1]").click()
-            self.we.find_element_by_xpath("/html/body/section/aside/div/ul/li[1]/ul/li[2]/a").click()
-            self.we.find_element_by_xpath("//*[@id='chk[]']").click()
-            self.we.find_element_by_xpath("//*[@id='del']").click()
-            pyautogui.moveTo(672,279)
-            pyautogui.click()
-            pyautogui.moveTo(685,288)
-            aa=pyautogui.text
-            self.assertEqual(aa,"删除成功",msg="出现错误")
-            pyautogui.moveTo(739,357)
-            pyautogui.click()
-        except Exception as a:
-            print("异常为", a)
 if __name__ == '__main__':
     z=unittest.TestSuite()
     z.addTest(Denglu("test_deng"))
